@@ -1,0 +1,30 @@
+.assets{
+    padding: 30px 60px 30px 30px !important;
+
+}
+
+.assets-cards{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.asset-view{
+    max-width: 365px;
+    height: 320px;
+    border: 1.5px solid var(--color-border);
+    padding: 10px;
+}
+
+.asset-item{
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-bottom: 1.5px solid var(--color-border);
+}
+
+.view-btn{
+    background-color: #eee;
+    color: var(--color-text-secondary);
+    padding: 1px 10px;
+    border-radius: 5px;
+}

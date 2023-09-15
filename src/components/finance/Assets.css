@@ -1,0 +1,9 @@
+.assets{
+    padding: 30px;
+}
+
+.assets-cards{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}

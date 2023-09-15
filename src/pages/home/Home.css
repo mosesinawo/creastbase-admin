@@ -1,0 +1,27 @@
+.homepage {
+    display: grid;
+    grid-template-columns: 18% 82%;
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar {
+    /* position: fixed;
+    z-index: 10;
+    width: 240px;
+    height: 100%;
+    transition: all .3s */
+}
+
+.sidebarHide {
+    left: -100%;
+    transition: all .3s;
+}
+
+.main {
+    /* position: absolute;
+    left: 230px; */
+}
+.mainFull{
+    left: 0px;
+}

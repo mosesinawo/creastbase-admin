@@ -1,0 +1,23 @@
+.card{
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    width: 220px;
+    height: 100px;
+    padding: 20px;
+}
+.card-img{
+    width: 22px;
+    height: 20px;
+}
+.card-dashboard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-line{
+    height: 50px;
+    width: 1px;
+    background-color: var(--color-border);
+}
