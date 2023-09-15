@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from "../../assets/images/logo.svg"
 import user from "../../assets/images/user.svg"
-import "./sidebar.css";
+import "./Sidebar.css";
 import { NavLink, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleLeft, faCoins, faFileInvoice, faUserGroup } from '@fortawesome/free-solid-svg-icons';
@@ -23,15 +23,15 @@ const Sidebar = () => {
         } else if (path === "finance")
             return FinanceTableHead
     }
-   
+
 
     const handleHide = () => {
-   
+
     }
     return (
         <div className='sidebar'>
-            <FontAwesomeIcon icon={faCircleLeft} style={{ color: '#333' }}className='sidebar-close'/>
-          
+            <FontAwesomeIcon icon={faCircleLeft} style={{ color: '#333' }} className='sidebar-close' />
+
             <div className='sidebar-logo'>
                 <img className='sidebar-logo-image' src={logo} alt="" />
             </div>
