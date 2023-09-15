@@ -6,7 +6,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleLeft, faCoins, faFileInvoice, faUserGroup } from '@fortawesome/free-solid-svg-icons';
 
-const Sidebar = (props) => {
+const Sidebar = () => {
 
     const { pathname } = useLocation();
 
@@ -23,12 +23,10 @@ const Sidebar = (props) => {
         } else if (path === "finance")
             return FinanceTableHead
     }
-    const {    setshownav, shownav} = props;
+   
 
     const handleHide = () => {
-        // // setshownav()
-        // console.log(shownav)
-        // console.log("working")
+   
     }
     return (
         <div className='sidebar'>
