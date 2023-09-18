@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import "./Tables.css";
+import "./Tables.scss";
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisVertical, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisVertical, faMagnifyingGlass, faUserPen } from '@fortawesome/free-solid-svg-icons'
 import AssetsTableHead from '../../assets/data/AssetsTableHead';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import UsersTableHead from '../../assets/data/UsersTableHead';
 import FinanceTableHead from '../../assets/data/FinanceTableHead';
+import viewProfile from '../../assets/images/asset-profile.png'
 
 const Tables = () => {
 
@@ -30,7 +31,7 @@ const Tables = () => {
 
     const path = pathname.split("/")[1]
 
-  
+
 
     const headerRow = () => {
 
@@ -50,7 +51,7 @@ const Tables = () => {
                 <td>Mr Bright</td>
                 <td>07054624163</td>
                 <td>NGN750,000</td>
-                <td><FontAwesomeIcon icon={faEllipsisVertical} /></td>
+                <td><Link to="/assets/apartment"><FontAwesomeIcon icon={faEllipsisVertical} /></Link></td>
             </tr>
         } else if (path === "users") {
             return <tr>
@@ -58,7 +59,7 @@ const Tables = () => {
                 <td>Adekunlewilliams@gmail.com</td>
                 <td>07054624163</td>
                 <td>5</td>
-                <td><FontAwesomeIcon icon={faEllipsisVertical} /></td>
+                <td><Link to="/assets/userinfo"> <FontAwesomeIcon icon={faEllipsisVertical} /></Link></td>
             </tr>
         } else if (path === "finance")
             return <tr>

@@ -5,9 +5,10 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home'
 import UploadPage from './pages/upload/UploadPage'
+import ApartmentDetails from './pages/apartment/ApartmentDetails'
+import UserDetails from './pages/userDetails/UserDetails'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -18,6 +19,8 @@ function App() {
           <Route path="/users" element={<Home />} />
           <Route path="/finance" element={<Home />} />
           <Route path="/assets/upload" element={<UploadPage />} />
+          <Route path="/assets/apartment" element={<ApartmentDetails />} />
+          <Route path="/assets/userinfo" element={<UserDetails />} />
         </Routes>
       </BrowserRouter>
     </>

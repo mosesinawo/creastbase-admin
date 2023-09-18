@@ -14,7 +14,8 @@ function Upload() {
                 <div><Link to="/assets" ><FontAwesomeIcon icon={faAngleLeft} size='lg' /> &nbsp; Assets  &nbsp;  &nbsp; /</Link> <span style={{
                     color: '#021B33', fontSize: '14px', fontWeight: '600',
                     marginLeft: '20px'
-                }}>Upload Asset</span></div>
+                   }}>Upload Asset</span>
+                </div>
                 <div className='upload-container d-flex flex-column'>
                     <div className="input-row">
                         <div className='upload-item'>
@@ -135,8 +136,8 @@ function Upload() {
                         </div>
                     </div>
                 </div>
-                
-                <Link to="/assets" className='add-asset'>Add Asset</Link>
+
+                <Link to="/assets/apartment" className='add-asset'>Add Asset</Link>
             </section>
         </>
     )

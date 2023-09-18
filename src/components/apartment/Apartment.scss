@@ -1,0 +1,60 @@
+.apt {
+
+    &-img-1 {
+        width: 534px;
+        height: 415px;
+    }
+
+    &-img-2 {
+        width: 400px;
+        height: 200px;
+    }
+
+
+    &-btn {
+        font-size: 12;
+        border: 1px solid;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
+
+    &-price {
+        color: var(--color-blue);
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &-price-tag {
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    &-desc {
+        border: 1.5px solid var(--color-border);
+        border-radius: 10px;
+        margin-top: 30px;
+        padding: 10px 0 20px;
+        width: 100%;
+    }
+
+    &-text {
+        color: #262C55;
+        font-size: 14px;
+    }
+
+    &-details {
+        border: 1.5px solid var(--color-border);
+        border-radius: 10px;
+        margin-top: 30px;
+        width: 100%;
+    
+
+        &-left {
+            padding: 20px 0;
+        }
+        &-right{
+            padding: 20px 0;
+
+        }
+    }
+}

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap');
+
 
 
 :root {
@@ -7,8 +9,13 @@
   --color-border: #ECECEC;
   --color-text-secondary: #707070;
   --color-gradiant: linear-gradient(90deg, #3D79EF 0%, #F1A5C2 89.52%);
-  --colors-primary-black: #021B33;
+  --color-primary-black: #021B33;
+  --color-blue: #262C55;
 
+}
+
+.text-darkblue{
+  color: #021B33;
 }
 
 a {
@@ -45,8 +52,9 @@ label {
   line-height: 22px;
   /* 183.333% */
 }
-input:focus{
- outline: none;
+
+input:focus {
+  outline: none;
 }
 
 a:hover {}
@@ -61,23 +69,40 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-h1 {}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
 
 button {}
 
 span {
   font-size: 14px;
-  color: var(--colors-primary-black);
+  color: var(--color-primary-black);
 }
 
-button{
+button {
   background-color: #fff;
   font-size: 13px;
+  border: none;
 }
+
 button:hover {}
 
 button:focus,
 button:focus-visible {}
+
+section {
+  padding: 30px 50px 60px 30px;
+  
+}
+
+.--family-1{
+
+}
+.--family-2{
+font-family: 'Merriweather', serif;
+}
 
 .--flex-center {
   display: flex;
@@ -138,4 +163,19 @@ button:focus-visible {}
 
 .--width-300px {
   width: 300px;
+}
+.--b-top{
+  border-top: 1.5px solid var(--color-border);
+}
+.--b-bottom{
+  border-bottom: 1.5px solid var(--color-border);
+}
+.--b-left{
+  border-left: 1.5px solid var(--color-border);
+}
+.--b-right{
+  border-right: 1.5px solid var(--color-border);
+}
+.--relative{
+  position: relative;
 }

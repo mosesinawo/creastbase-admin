@@ -4,7 +4,22 @@
     border: 1px solid var(--color-border);
     border-radius: 5px;
     margin-top: 30px;
+
+    &-tooltip{
+        position: absolute;
+        background-color: #eee;
+        width: 100px;
+        height: 100px;
+        right: 10;
+        z-index: 10;
+
+        &-text{
+            font-size: 12px;
+        }
+    }
+
 }
+
 
 table {
     width: 100%;
@@ -12,6 +27,7 @@ table {
     color: var(--color-text-secondary);
     padding: 20px;
 
+  
 }
 
 thead {
