@@ -86,7 +86,7 @@ const TableBody = (props) => {
             <td>NGN750,000</td>
             <td className={option ? "showOption" : "hideOption"} > <FontAwesomeIcon icon={faEllipsisVertical} onClick={() => showData(id)} />
                 <div className={option ? "table-tooltip" : "hide-tooltip"}>
-                    <Link to="/assets/userinfo" className="d-flex align-items-center py-3 px-2"> <FontAwesomeIcon icon={faUserPen} style={{ color: '#3C91E6' }} /><p className="table-tooltip-info">View All Details</p> </Link>
+                    <Link to="/assets/apartment" className="d-flex align-items-center py-3 px-2"> <FontAwesomeIcon icon={faUserPen} style={{ color: '#3C91E6' }} /><p className="table-tooltip-info">View All Details</p> </Link>
                     <div onClick={showModal} className="d-flex align-items-center py-2 px-2 --b-bottom --b-top"><FontAwesomeIcon icon={faTrashCan} style={{ color: '#CA1551' }} /> <p className="table-tooltip-delete">Delete Asset</p></div>
                     <div className="d-flex align-items-center py-1 px-2">  <Switch {...label} color="primary" defaultChecked /> &nbsp; <p>Unlist Asset</p></div>
                 </div>
