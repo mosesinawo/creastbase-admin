@@ -1,0 +1,46 @@
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 65%;
+    height: 50vh;
+}
+.modal-dialog{
+    max-width: 50vw;
+}
+
+.modal-content{
+    height: max-content;
+    justify-content: space-between;
+    width: 100%;
+}
+.btn-close{
+    background-color: #E0E5F2;
+    border-radius: 50%;
+
+}
+
+.adduser{
+
+    &-containerr{
+    
+    }
+
+    &-input{
+    width: 90%;
+    height: 50px;
+    &-2{
+        width: 100%;
+        height: 50px;
+    }
+    }
+    &-btn{
+        width: 90%;
+        background: var(--color-gradiant);
+        color: #fff;
+        padding: 15px 0;
+        border-radius: 5px;
+    }
+}

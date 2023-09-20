@@ -11,6 +11,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 const Users = () => {
 
     const [taBHead, settaBHead] = useState({})
+    
 
     return (
         <div className='assets'>

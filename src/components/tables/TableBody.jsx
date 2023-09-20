@@ -59,12 +59,13 @@ const IOSSwitch = styled((props) => (
 
 const TableBody = (props) => {
 
-     console.log(props)
+    console.log(props)
     const [option, setOption] = useState(false)
-   
+
 
     const id = props?.id
     const showModal = props?.handleOpen
+    const handleOpenlist = props?.handleOpenlist
 
     const { pathname } = useLocation();
     const path = pathname.split("/")[1]
@@ -88,7 +89,7 @@ const TableBody = (props) => {
                 <div className={option ? "table-tooltip" : "hide-tooltip"}>
                     <Link to="/assets/apartment" className="d-flex align-items-center py-3 px-2"> <FontAwesomeIcon icon={faUserPen} style={{ color: '#3C91E6' }} /><p className="table-tooltip-info">View All Details</p> </Link>
                     <div onClick={showModal} className="d-flex align-items-center py-2 px-2 --b-bottom --b-top"><FontAwesomeIcon icon={faTrashCan} style={{ color: '#CA1551' }} /> <p className="table-tooltip-delete">Delete Asset</p></div>
-                    <div className="d-flex align-items-center py-1 px-2">  <Switch {...label} color="primary" defaultChecked /> &nbsp; <p>Unlist Asset</p></div>
+                    <div className="d-flex align-items-center py-1 px-2">  <Switch {...label} color="primary" defaultChecked onClick={handleOpenlist} /> &nbsp; <p>Unlist Asset</p></div>
                 </div>
             </td>
         </tr>)

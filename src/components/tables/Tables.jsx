@@ -9,8 +9,12 @@ import UsersTableHead from '../../assets/data/UsersTableHead';
 import FinanceTableHead from '../../assets/data/FinanceTableHead';
 import viewProfile from '../../assets/images/asset-profile.png'
 import TableBody from './TableBody';
-import Trash from "../../assets/images/trash.png"
+
 import { Button, Modal } from 'react-bootstrap';
+import DeleteModal from '../modals/DeleteModal';
+import AddUserModal from '../modals/AddUserModal';
+import SearchAsset from '../modals/SearchModal';
+import UnListModal from '../modals/UnListModal';
 
 const Tables = () => {
 
@@ -30,8 +34,17 @@ const Tables = () => {
 
     }, [])
     const [open, setOpen] = React.useState(false);
+    const [search, setSearch] = React.useState(false);
+    const [handleList, sethandleList] = React.useState(false);
+    const handleOpenlist = () => sethandleList(true)
+    const handleCloselist = () => sethandleList(false)
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const handleOpenSearch = () => setSearch(true)
+    const handleCloseSearch = () => setSearch(false)
+
+
     const { pathname } = useLocation();
 
     const path = pathname.split("/")[1]
@@ -66,50 +79,25 @@ const Tables = () => {
                     <thead>
                         <tr>
                             {row.map((item) => <td>{item.name}</td>)}
-                            <td> <FontAwesomeIcon icon={faMagnifyingGlass} /></td>
+                            <td> <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleOpenSearch} /></td>
                         </tr>
 
                     </thead>
                     <tbody>
                         {data.length <= 0 ? (<p>Loading...</p>) : data?.map((item, index) => {
-                            return <TableBody id={item?.id} handleOpen={handleOpen} />
+                            return <TableBody id={item?.id} handleOpen={handleOpen}
+                                handleOpenlist={handleOpenlist}
+                            />
                         })
 
                         }
                     </tbody>
                 </table>
             </div>
+            <DeleteModal open={open} handleClose={handleClose} />
+            <SearchAsset open={search} handleClose={handleCloseSearch} />
+            <UnListModal open={handleList} handleClose={handleCloselist} />
 
-            <Modal
-                // size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-                show={open}
-                onHide={handleClose}
-
-            >
-                <div className="modal-header py-4   pe-4">
-                    <button type="button" onClick={handleClose} className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    </button>
-                </div>
-
-                <div className='d-flex justify-content-center'>
-
-                    <div className='modal-container'>
-                        <img src={Trash} alt="trash" style={{
-                            width: 50,
-                            height: 50
-                        }} />
-                        <p style={{ color: '#273240', fontWeight: 600, fontSize: 18 }}>Delete Asset</p>
-                        <p style={{ color: '#021B33', fontSize: 14, marginTop: 4 }}>Are you sure you want to delete this Asset. This action cannot be undone once preformed.</p>
-                    </div>
-
-                </div>
-                <div style={{ backgroundColor: '#FAFAFA' }} className='d-flex justify-content-end --b-bottom py-3 px-2 gap-2 align-items-center '>
-                    <p style={{ border: '1px solid #ECECEC', padding: '5px 10px', borderRadius: 2 }}>Cancel</p>
-                    <p style={{ backgroundColor: '#CA1551', color: '#fff', borderRadius: 2, padding: '5px 10px' }}>Yes, Delete Asset</p>
-                </div>
-            </Modal>
             {/* <Button variant="primary" onClick={handleShow}>
                 Launch demo modal
             </Button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Upload.css'
+import './Upload.scss'
 import { faAngleLeft, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import upload from "../../assets/images/upload.png"

@@ -15,12 +15,21 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Navbar from '../navbar/Navbar';
 import "./Apartment.scss"
+import DeleteModal from '../modals/DeleteModal'
+import UnListModal from '../modals/UnListModal'
 
 const Apartment = () => {
+
+    const [open, setOpen] = React.useState(false);
+    const [handleList, sethandleList] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+    const handleOpenlist = () => sethandleList(true)
+    const handleCloselist = () => sethandleList(false)
     return (<>
-    <Navbar/>
+        <Navbar />
         <section >
-            <div style={{ marginBottom:'20px'}}><Link to="/assets" ><FontAwesomeIcon icon={faAngleLeft} size='lg' /> &nbsp; Assets  &nbsp;  &nbsp; /</Link> <span style={{
+            <div style={{ marginBottom: '20px' }}><Link to="/assets" ><FontAwesomeIcon icon={faAngleLeft} size='lg' /> &nbsp; Assets  &nbsp;  &nbsp; /</Link> <span style={{
                 color: '#021B33', fontSize: '14px', fontWeight: '600',
                 marginLeft: '20px'
             }}> Apartment</span>
@@ -42,8 +51,8 @@ const Apartment = () => {
                         }}>Ref No: RNTA001</p>
                     </div>
                     <div className='d-flex gap-3'>
-                        <p style={{ backgroundColor: '#262C551A', color: '#262C55' }} className='apt-btn'>  <FontAwesomeIcon icon={faCircleMinus} /> &nbsp;Unlist Asset</p>
-                        <p style={{ color: '#D13852', backgroundColor: '#D138521A' }} className='apt-btn'> <FontAwesomeIcon icon={faTrashCan} /> &nbsp; Delete Asset</p>
+                        <p onClick={handleOpenlist} style={{ backgroundColor: '#262C551A', color: '#262C55', cursor: 'pointer' }} className='apt-btn'>  <FontAwesomeIcon icon={faCircleMinus} /> &nbsp;Unlist Asset</p>
+                        <p onClick={handleOpen} style={{ color: '#D13852', backgroundColor: '#D138521A', cursor: 'pointer' }} className='apt-btn'> <FontAwesomeIcon icon={faTrashCan} /> &nbsp; Delete Asset</p>
                     </div>
                 </div>
                 <p style={{ color: 'black', marginTop: 10 }}><FontAwesomeIcon icon={faLocationDot} style={{ color: '#35A162' }} /> 16, Olusola Str, Surulere Lagos.</p>
@@ -167,6 +176,8 @@ const Apartment = () => {
                 </div>
             </div>
         </section>
+        <DeleteModal open={open} handleClose={handleClose} />
+        <UnListModal open={handleList} handleClose={handleCloselist} />
     </>
     )
 }
