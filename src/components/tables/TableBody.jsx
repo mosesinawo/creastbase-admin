@@ -59,7 +59,6 @@ const IOSSwitch = styled((props) => (
 
 const TableBody = (props) => {
 
-    console.log(props)
     const [option, setOption] = useState(false)
 
 

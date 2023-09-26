@@ -15,7 +15,7 @@ export default [
         number: 301
     },
     {
-        name: "Perperties",
+        name: "Properties",
         image: EventHalls,
         number: 106
     },

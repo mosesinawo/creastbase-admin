@@ -115,3 +115,42 @@ tr {
     border-radius: 5px;
     color: #3D79EF;
 }
+
+.pagination {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 20px;
+    gap: 10px;
+  }
+  
+  .pagination .page-num {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 600;
+    color: var(--color-lightBlue);
+    border: 1px solid var(--color-lightBlue);
+  }
+  
+  .pagination .page-prev {
+    padding:12px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-weight: normal;
+    color:#011B33B2;
+    border: 1px solid #011B33B2;
+  }
+  .pagination .page-disabled {
+   opacity: 0.6;
+  }
+  
+  .pagination .page-num:hover {
+   
+  }
+  .pagination .active {
+    color: #fff;
+    background: var(--color-lightBlue) !important;
+  }

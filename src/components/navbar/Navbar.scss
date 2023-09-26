@@ -1,0 +1,25 @@
+.navbar{
+  padding: 15px 100px 13px 50px;
+  border-bottom: 1.5px solid var(--color-border);
+  position: relative;
+
+  &-arrow{
+    position: fixed;
+    left: 230px;
+    mix-blend-mode: luminosity;
+    cursor: pointer;
+    
+  }
+  &-bar{
+    position: fixed;
+    left: 10px;
+    mix-blend-mode: luminosity;
+    cursor: pointer;
+    transition: all .2s;
+  }
+}
+
+.navbar-right{
+    display: flex;
+
+}

@@ -4,9 +4,11 @@ import user from "../../assets/images/user.svg"
 import "./Sidebar.css";
 import { NavLink, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleLeft, faCoins, faFileInvoice, faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import { faChartColumn, faCircleLeft, faCoins, faFileInvoice, faUserGroup } from '@fortawesome/free-solid-svg-icons';
 
-const Sidebar = () => {
+const Sidebar = ({hideNav, showNav}) => {
+
+    console.log(showNav)
 
     const { pathname } = useLocation();
 
@@ -29,15 +31,14 @@ const Sidebar = () => {
 
     }
     return (
-        <div className='sidebar'>
-            <FontAwesomeIcon icon={faCircleLeft} style={{ color: '#333' }} className='sidebar-close' />
+        <div className={showNav ? "sidebar hideNav": "sidebar"}>
 
             <div className='sidebar-logo'>
                 <img className='sidebar-logo-image' src={logo} alt="" />
             </div>
             <nav className='sidebar-nav'>
                 <ul className='sidebar-list'>
-                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/" className='sidebar-link' > <img src={user} alt="" /> Dashboard</NavLink></li>
+                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/dashboard" className='sidebar-link' > <FontAwesomeIcon icon={faChartColumn} /> Dashboard</NavLink></li>
                     <li className='sidebar-items'><NavLink exact activeClassName="active" to="/assets" className='sidebar-link' > <FontAwesomeIcon icon={faFileInvoice} />Assets</NavLink></li>
                     <li className='sidebar-items'><NavLink exact activeClassName="active" to="/users" className='sidebar-link' ><FontAwesomeIcon icon={faUserGroup} />Users</NavLink></li>
                     <li className='sidebar-items'><NavLink exact activeClassName="active" to="/finance" className='sidebar-link' > <FontAwesomeIcon icon={faCoins} /> Finance</NavLink></li>
