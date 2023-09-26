@@ -9,27 +9,32 @@ import Dashboard from '../dashboard/Dashboard'
 
 const Main = () => {
   const { pathname } = useLocation();
+  const location  = useLocation();
 
   const path = pathname.split("/")[1]
 
-  console.log(path)
+  console.log(pathname)
+  console.log(location)
+
 
   const Section = () => {
-    if (path === "") {
+    if (path === undefined) {
       return (<Dashboard />)
     } else if (path === "assets") {
       return (<Assets />)
     } else if (path === "users") {
       return (<Users />)
-    } else if (path === "finance")
+    } else if (path === "finance"){
       return (<Finance />)
+    }else{
+      return (<Dashboard />)
+    }
   }
 
   const section = Section()
 
   return (
     <div className=''>
-      <Navbar />
       {section}
     </div>
   )

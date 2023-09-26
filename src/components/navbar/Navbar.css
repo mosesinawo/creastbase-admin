@@ -1,9 +1,0 @@
-.navbar{
-  padding: 15px 100px 13px 50px;
-  border-bottom: 1.5px solid var(--color-border);
-}
-
-.navbar-right{
-    display: flex;
-
-}

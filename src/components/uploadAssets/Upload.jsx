@@ -9,7 +9,6 @@ import Navbar from '../navbar/Navbar';
 function Upload() {
     return (
         <>
-            <Navbar />
             <section className='upload-section'>
                 <div><Link to="/assets" ><FontAwesomeIcon icon={faAngleLeft} size='lg' /> &nbsp; Assets  &nbsp;  &nbsp; /</Link> <span style={{
                     color: '#021B33', fontSize: '14px', fontWeight: '600',

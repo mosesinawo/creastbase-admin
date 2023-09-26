@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Tables.scss";
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleXmark, faEllipsisVertical, faFileCircleXmark, faMagnifyingGlass, faUserPen } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft, faChevronRight, faCircleXmark, faEllipsisVertical, faFileCircleXmark, faMagnifyingGlass, faUserPen } from '@fortawesome/free-solid-svg-icons'
 import AssetsTableHead from '../../assets/data/AssetsTableHead';
 import { Link, useLocation } from 'react-router-dom';
 import UsersTableHead from '../../assets/data/UsersTableHead';
@@ -15,6 +15,7 @@ import DeleteModal from '../modals/DeleteModal';
 import AddUserModal from '../modals/AddUserModal';
 import SearchAsset from '../modals/SearchModal';
 import UnListModal from '../modals/UnListModal';
+import ReactPaginate from 'react-paginate';
 
 const Tables = () => {
 
@@ -63,11 +64,24 @@ const Tables = () => {
         } else if (path === "finance")
             return FinanceTableHead
     }
-
-
-
     const row = headerRow();
     const body = TableBody()
+
+    const [currentItems, setCurrentItems] = useState([]);
+    const [pageCount, setPageCount] = useState(0);
+    const [itemOffset, setItemOffset] = useState(0);
+    const itemsPerPage = 5;
+
+    useEffect(() => {
+        const endOffset = itemOffset + itemsPerPage;
+        setCurrentItems(data.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(data.length / itemsPerPage));
+    }, [itemOffset, itemsPerPage, data]);
+
+    const handlePageClick = (event) => {
+        const newOffset = (event.selected * itemsPerPage) % data.length;
+        setItemOffset(newOffset);
+    };
 
 
 
@@ -84,7 +98,7 @@ const Tables = () => {
 
                     </thead>
                     <tbody>
-                        {data.length <= 0 ? (<p>Loading...</p>) : data?.map((item, index) => {
+                        {currentItems.length <= 0 ? (<p>Loading...</p>) : data?.map((item, index) => {
                             return <TableBody id={item?.id} handleOpen={handleOpen}
                                 handleOpenlist={handleOpenlist}
                             />
@@ -94,6 +108,21 @@ const Tables = () => {
                     </tbody>
                 </table>
             </div>
+            <ReactPaginate
+                breakLabel="..."
+                nextLabel={<FontAwesomeIcon icon={faChevronRight} />}
+                onPageChange={handlePageClick}
+                pageRangeDisplayed={2}
+                pageCount={pageCount}
+                previousLabel={<FontAwesomeIcon icon={faChevronLeft} />}
+                renderOnZeroPageCount={null}
+                containerClassName="pagination"
+                pageLinkClassName='page-num'
+                previousLinkClassName='page-prev'
+                nextLinkClassName='page-prev'
+                disabledClassName= 'page-disabled'
+                activeLinkClassName='active'
+            />
             <DeleteModal open={open} handleClose={handleClose} />
             <SearchAsset open={search} handleClose={handleCloseSearch} />
             <UnListModal open={handleList} handleClose={handleCloselist} />

@@ -19,7 +19,7 @@ const UserInfo = () => {
 
     console.log(path)
     return (<>
-        <Navbar />
+   
         <div className='userInfo --relative'>
             <div className='d-flex justify-content-between userInfo-top '>
                 <Link to='/users'>

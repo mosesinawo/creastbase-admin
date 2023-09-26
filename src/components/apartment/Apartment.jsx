@@ -27,7 +27,6 @@ const Apartment = () => {
     const handleOpenlist = () => sethandleList(true)
     const handleCloselist = () => sethandleList(false)
     return (<>
-        <Navbar />
         <section >
             <div style={{ marginBottom: '20px' }}><Link to="/assets" ><FontAwesomeIcon icon={faAngleLeft} size='lg' /> &nbsp; Assets  &nbsp;  &nbsp; /</Link> <span style={{
                 color: '#021B33', fontSize: '14px', fontWeight: '600',

@@ -5,14 +5,9 @@ import Sidebar from '../../components/sidebar/Sidebar'
 
 const ApartmentDetails = () => {
   return (
-    <div className='homepage'>
-      <div className="sidebar">
-        <Sidebar />
-      </div>
-      <div className="main">
-        <Apartment />
-      </div>
-    </div>
+    <>
+      <Apartment />
+    </>
   )
 }
 
