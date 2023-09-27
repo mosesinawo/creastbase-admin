@@ -45,8 +45,8 @@ const Linechart = () => {
     ]
 
     return (
-        <ResponsiveContainer  width={300} height={200}>
-            <LineChart width={300} height={200} data={data}
+        <ResponsiveContainer  width="100%" height={250} >
+            <LineChart  data={data}
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#E2E7E7" />
                 <XAxis dataKey="name" tick={{ fill: '#737B8B', fontSize: 11 }} />
@@ -55,6 +55,7 @@ const Linechart = () => {
                 <Line type="monotone" dataKey="pv" stroke="#3C91E6" strokeWidth={3} />
             </LineChart>
         </ResponsiveContainer>
+        // width={300} height={250}
     )
 }
 

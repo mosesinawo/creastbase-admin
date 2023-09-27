@@ -1,0 +1,80 @@
+.dashboard {
+    margin-top: 30px;
+    padding: 0 35px;
+
+    &-name{
+        display: none;
+    }
+
+    &-top {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    &-bottom {
+        display: flex;
+        align-items: flex-end;
+        margin-top: 30px;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    &-cards {
+        height: 320px;
+    }
+
+    &-bottom-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 30%;
+    }
+    &-bottom-left {
+       width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .dashboard{
+
+        &-top {
+            gap: 30px;
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .dashboard{
+
+        &-top {
+            gap: 50px;
+            justify-content: center;
+        }
+        &-bottom {
+          flex-direction: column;
+          align-items: center;
+        }
+        &-bottom-right {
+            width: 100%;
+        }
+        &-bottom-left {
+           width: 100%;
+        }
+        &-cards {
+           width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 560px){
+    .dashboard{
+
+        &-name{
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+}
+

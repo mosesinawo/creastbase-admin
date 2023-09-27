@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import {ResponsiveContainer ,Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from "recharts";
 
 const Barchart = () => {
 
@@ -65,22 +65,25 @@ const Barchart = () => {
             "pv": 4300
         },
     ]
+    
+
 
     return (
-        <div>
-         
-            <BarChart width={650} height={250} data={data}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#E2E7E7" />
-                <XAxis dataKey="name" tick={{ fill: '#737B8B', fontSize: 11 }} />
-              
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="pv" fill="#F1A5C2" barSize={9} />
-                <Bar dataKey="uv" fill="#E6E8EC" barSize={9}/>
-            </BarChart>
-           
-        </div>
+            <ResponsiveContainer  width="95%" height={250}>
+                <BarChart data={data}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#E2E7E7" />
+                    <XAxis dataKey="name" tick={{ fill: '#737B8B', fontSize: 11 }} />
+
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="pv" fill="#F1A5C2" barSize={9} />
+                    <Bar dataKey="uv" fill="#E6E8EC" barSize={9} />
+                </BarChart>
+            </ResponsiveContainer>
+      
     )
 }
 
 export default Barchart
+
+   {/* width="100%" height={250} */}

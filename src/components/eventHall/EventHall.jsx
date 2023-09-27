@@ -1,9 +1,9 @@
 import React from 'react'
 import { faAngleLeft, faCircle, faCircleMinus, faLocationDot, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import apt1 from "../../assets/images/apt-1.png"
-import apt2 from "../../assets/images/apt-2.png"
-import apt3 from "../../assets/images/apt-3.png"
+import event1 from "../../assets/images/event-1.png"
+import event2 from "../../assets/images/event-2.png"
+import event3 from "../../assets/images/event-3.png"
 import pics from "../../assets/images/pics.png"
 import twitter from "../../assets/images/twitter.svg"
 import whatsapp from "../../assets/images/whatsapp-icon.svg"
@@ -13,13 +13,13 @@ import tenancy from "../../assets/images/tenancy.svg"
 import agreement from "../../assets/images/agreement.svg"
 import call from "../../assets/images/call.svg"
 import { Link } from 'react-router-dom'
-import "./Apartment.scss"
+// import "./Apartment.scss"
 import DeleteModal from '../modals/DeleteModal'
 import UnListModal from '../modals/UnListModal'
 import { ArrowRight2, Edit2, Location, MinusCirlce, MoreCircle, Trash } from 'iconsax-react'
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 
-const Apartment = () => {
+const EventHall = () => {
 
     const [open, setOpen] = React.useState(false);
     const [handleList, sethandleList] = React.useState(false);
@@ -32,29 +32,29 @@ const Apartment = () => {
             <div style={{ marginBottom: '20px' }}><Link to="/assets" ><FontAwesomeIcon icon={faAngleLeft} size='lg' /> &nbsp; Assets  &nbsp;  &nbsp; /</Link> <span style={{
                 color: '#021B33', fontSize: '14px', fontWeight: '600',
                 marginLeft: '20px'
-            }}> Apartment</span>
+            }}> Event Hall</span>
             </div>
             <div className=''>
                 <div className='d-flex gap-3 '>
                     <div className='--relative apt-imageContainer1'>
-                        <img src={apt1} alt="apt1" className='apt-img-1  ' />
+                        <img src={event1} alt="apt1" className='apt-img-1  ' />
                         <p className='apt-imgTag'>Front-view</p>
-                        <p className='apt-imgTag-arrow --flex-center'><ArrowRight2 size="32" color="#262C55"/></p>
+                        <p className='apt-imgTag-arrow --flex-center'><ArrowRight2 size="32" color="#262C55" /></p>
                     </div>
                     <div className='d-flex flex-column gap-3 apt-imageContainer2'>
                         <div className='--relative'>
-                            <img src={apt2} alt="apt2" className='apt-img-2' />
+                            <img src={event2} alt="apt2" className='apt-img-2' />
                             <p className='apt-imgTag'>Sitting Room</p>
                         </div>
                         <div className='--relative'>
-                            <img src={apt3} alt="apt3" className='apt-img-2' />
+                            <img src={event3} alt="apt3" className='apt-img-2' />
                             <p className='apt-imgTag'>Kitchen</p>
                         </div>
                     </div>
                 </div>
                 <div className='d-flex justify-content-between mt-4'>
                     <div className='d-flex gap-4'>
-                        <p style={{ color: '#262C55', fontSize: 20, fontWeight: '700' }}>2 Bedroom Flat</p>
+                        <p style={{ color: '#262C55', fontSize: 20, fontWeight: '700' }}>Porter Yard Banquet Hall <span className='apt-size-tag'> <MoreCircle size="5" color="#011B3366" variant="Bold" /> &nbsp; 500 Capacity</span></p>
                         <p className='apt-btn' style={{ color: '#35A162', borderColor: '#35A162' }}>Geo-locate</p>
                         <p className='apt-btn' style={{
                             borderColor: '#011B332E', fontSize: 12, color: 'black'
@@ -194,5 +194,4 @@ const Apartment = () => {
     )
 }
 
-
-export default Apartment
+export default EventHall

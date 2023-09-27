@@ -1,7 +1,7 @@
 import React from 'react'
 import { CircularProgressbar, CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import './ProgressChart.css';
+import './ProgressChart.scss';
 
 const ProgressChart = () => {
     return (

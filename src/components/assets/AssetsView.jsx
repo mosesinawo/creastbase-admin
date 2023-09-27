@@ -6,9 +6,11 @@ import { Link } from 'react-router-dom';
 
 const AssetItem = () => {
     return (
-        <div className='d-flex align-items-center gap-2 asset-item'>
-            <FontAwesomeIcon icon={faCircleUser} size="lg" style={{ color: '#D5D9E7' }} />
-            <p style={{ color: '#021B33' }}>The Annex, Lekki Beach</p>
+        <div className='d-flex align-items-center justify-content-between asset-item'>
+            <div className='d-flex  gap-4'>
+                <FontAwesomeIcon icon={faCircleUser} size="lg" style={{ color: '#D5D9E7' }} />
+                <p style={{ color: '#021B33', fontSize:12 }}>The Annex, Lekki Beach</p>
+            </div>
             <p style={{ color: '#021B33' }} className='view-btn'>23 Views</p>
         </div>
     )
@@ -16,7 +18,7 @@ const AssetItem = () => {
 
 const AssetsView = () => {
     return (
-        <div className='asset-view'>
+        <div className='asset-view '>
             <p style={{ color: '#021B33' }}>Recently Boosted Assets</p>
             <AssetItem />
             <AssetItem />

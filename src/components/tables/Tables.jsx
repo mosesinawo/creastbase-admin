@@ -17,7 +17,7 @@ import SearchAsset from '../modals/SearchModal';
 import UnListModal from '../modals/UnListModal';
 import ReactPaginate from 'react-paginate';
 
-const Tables = () => {
+const Tables = ({assetLink}) => {
 
     const [data, setData] = useState([])
     const [header, setHeader] = useState([])
@@ -101,6 +101,7 @@ const Tables = () => {
                         {currentItems.length <= 0 ? (<p>Loading...</p>) : data?.map((item, index) => {
                             return <TableBody id={item?.id} handleOpen={handleOpen}
                                 handleOpenlist={handleOpenlist}
+                                assetLink={assetLink}
                             />
                         })
 

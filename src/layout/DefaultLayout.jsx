@@ -11,7 +11,6 @@ const DefaultLayout = () => {
 
     const hideNav = () => {
         setShowNav(!showNav)
-        console.log("working")
     }
 
     return (
@@ -19,9 +18,11 @@ const DefaultLayout = () => {
             <div>
                 <Sidebar hideNav={hideNav} showNav={showNav} />
             </div>
-            <div className={showNav ? "main showFull": "main"}>
-                <Navbar hideNav={hideNav} showNav={showNav}/>
-                <Outlet />
+            <div className={showNav ? "main showFull" : "main"}>
+                <Navbar hideNav={hideNav} showNav={showNav} />
+                <div className=''>
+                    <Outlet />
+                </div>
             </div>
         </div>
     )
