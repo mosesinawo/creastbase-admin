@@ -10,8 +10,8 @@
 }
 
 .asset-view{
-    max-width: 365px;
-    height: 320px;
+    width: 355px;
+    height: 347px;
     border: 1.5px solid var(--color-border);
     padding: 10px;
 }
@@ -27,4 +27,16 @@
     color: var(--color-text-secondary);
     padding: 1px 10px;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 768px){
+
+    .asset-view{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px){
+    .asset-view{
+       height: 400px;
+    }
 }

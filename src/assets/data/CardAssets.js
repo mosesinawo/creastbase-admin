@@ -16,12 +16,12 @@ export default [
     },
     {
         name: "Properties",
-        image: EventHalls,
+        image: Properties,
         number: 106
     },
     {
         name: "Event Halls",
-        image: Properties,
+        image: EventHalls,
         number: 89
     },
 ]

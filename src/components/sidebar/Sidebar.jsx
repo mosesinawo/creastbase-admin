@@ -1,12 +1,11 @@
 import React from 'react'
-import logo from "../../assets/images/logo.svg"
-import user from "../../assets/images/user.svg"
-import "./Sidebar.css";
+import logo from "../../assets/images/logo-icon.svg"
+import close from "../../assets/images/close.svg"
+import "./Sidebar.scss";
 import { NavLink, useLocation } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChartColumn, faCircleLeft, faCoins, faFileInvoice, faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import { Data2, DocumentText, Layer, Profile2User, StatusUp } from 'iconsax-react';
 
-const Sidebar = ({hideNav, showNav}) => {
+const Sidebar = ({ hideNav, showNav }) => {
 
     console.log(showNav)
 
@@ -31,18 +30,22 @@ const Sidebar = ({hideNav, showNav}) => {
 
     }
     return (
-        <div className={showNav ? "sidebar hideNav": "sidebar"}>
+        <div className={showNav ? "sidebar hideNav" : "sidebar"}>
 
             <div className='sidebar-logo'>
-                <img className='sidebar-logo-image' src={logo} alt="" />
+                <div className='d-flex gap-2'>
+                    <img className='sidebar-logo-image' src={logo} alt="" />
+                    <p className='sidebar-logo-text'>{!showNav && 'crestbase'}</p>
+                </div>
+                <img className='sidebar-close' src={close} alt="close" onClick={hideNav} />
             </div>
             <nav className='sidebar-nav'>
                 <ul className='sidebar-list'>
-                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/dashboard" className='sidebar-link' > <FontAwesomeIcon icon={faChartColumn} /> Dashboard</NavLink></li>
-                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/assets" className='sidebar-link' > <FontAwesomeIcon icon={faFileInvoice} />Assets</NavLink></li>
-                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/users" className='sidebar-link' ><FontAwesomeIcon icon={faUserGroup} />Users</NavLink></li>
-                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/finance" className='sidebar-link' > <FontAwesomeIcon icon={faCoins} /> Finance</NavLink></li>
-                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/" className='sidebar-link' > <img src={user} alt="" /> Team Management</NavLink></li>
+                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/dashboard" className='sidebar-link' > <StatusUp size="20" /> {!showNav && "Dashboard"}</NavLink></li>
+                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/assets" className='sidebar-link' > <DocumentText size="20" />{!showNav && "Assets"}</NavLink></li>
+                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/users" className='sidebar-link' ><Profile2User size="20" />{!showNav && "Users"}</NavLink></li>
+                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/finance" className='sidebar-link' > <Layer size="20" /> {!showNav && "Finance"}</NavLink></li>
+                    <li className='sidebar-items'><NavLink exact activeClassName="active" to="/" className='sidebar-link' > <Data2 size="20" /> {!showNav && "Team Management"}</NavLink></li>
                 </ul>
             </nav>
         </div>

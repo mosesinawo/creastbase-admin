@@ -74,6 +74,7 @@ const TableBody = (props) => {
             setOption(!option)
         }
     }
+    console.log(props?.assetLink)
 
     const label = { inputProps: { 'aria-label': 'Size switch demo' } };
 
@@ -83,10 +84,10 @@ const TableBody = (props) => {
             <td>4, oladele str, berger, Lagos...</td>
             <td>Mr Bright</td>
             <td>07054624163</td>
-            <td>NGN750,000</td>
+            <td onClick={() => console.log(props?.assetLink)} >NGN750,000</td>
             <td className={option ? "showOption" : "hideOption"} > <FontAwesomeIcon icon={faEllipsisVertical} onClick={() => showData(id)} />
                 <div className={option ? "table-tooltip" : "hide-tooltip"}>
-                    <Link to="/assets/apartment" className="d-flex align-items-center py-3 px-2"> <FontAwesomeIcon icon={faUserPen} style={{ color: '#3C91E6' }} /><p className="table-tooltip-info">View All Details</p> </Link>
+                    <Link to={`${props?.assetLink}`} className="d-flex align-items-center py-3 px-2"> <FontAwesomeIcon icon={faUserPen} style={{ color: '#3C91E6' }} /><p className="table-tooltip-info">View All Details</p> </Link>
                     <div onClick={showModal} className="d-flex align-items-center py-2 px-2 --b-bottom --b-top"><FontAwesomeIcon icon={faTrashCan} style={{ color: '#CA1551' }} /> <p className="table-tooltip-delete">Delete Asset</p></div>
                     <div className="d-flex align-items-center py-1 px-2">  <Switch {...label} color="primary" defaultChecked onClick={handleOpenlist} /> &nbsp; <p>Unlist Asset</p></div>
                 </div>

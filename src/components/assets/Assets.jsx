@@ -1,6 +1,6 @@
 import React from 'react'
 import PrimaryCard from '../cards/PrimaryCard'
-import "./Assets.css"
+import "./Assets.scss"
 import Tables from '../tables/Tables';
 import TableTab from '../tables/TableTab';
 import CardAssets from '../../assets/data/CardAssets';
@@ -25,8 +25,6 @@ const Assets = () => {
 
             <div>
                 <TableTab  />
-                <Tables name="name" location="Location" agent="Agent’s/Real Estate Company"
-                contact="Agent’s Contact" price="Full Price"/>
             </div>
         </div>
     )

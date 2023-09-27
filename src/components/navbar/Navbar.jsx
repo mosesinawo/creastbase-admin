@@ -3,11 +3,10 @@ import bell from "../../assets/images/bell.svg"
 import avatar from "../../assets/images/avatar.svg"
 import pointer from "../../assets/images/pointer.svg"
 import dropdown from "../../assets/images/dropdown.svg"
+import logo from "../../assets/images/logo.svg"
 import "./Navbar.scss";
 import { useLocation } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faChartColumn, faCoins, faFileInvoice, faLessThan, faUserGroup } from '@fortawesome/free-solid-svg-icons';
-import document from "../../assets/images/user.svg"
+import { DocumentText, HambergerMenu, Layer, Profile2User, StatusUp } from 'iconsax-react';
 
 const Navbar = (props) => {
 
@@ -23,13 +22,13 @@ const showIcon = props.showNav
     const icon = () => {
 
         if (path === "assets") {
-            return <FontAwesomeIcon icon={faFileInvoice} />
+            return  <DocumentText size="25"/>
         } else if (path === "users") {
-            return <FontAwesomeIcon icon={faUserGroup} />
+            return <Profile2User size="25"/>
         } else if (path === "finance") {
-            return <FontAwesomeIcon icon={faCoins} />
+            return <Layer size="25"/>
         } else {
-            return <FontAwesomeIcon icon={faChartColumn} />
+            return <StatusUp size="25"/>
         }
     }
     const image = icon();
@@ -37,15 +36,15 @@ const showIcon = props.showNav
 
     return (
         <div className='navbar --flex-between'>
-            <div  >
+            <div className='--flex-start gap-3' >
               { !showIcon&& <img src={pointer} alt="pointer"  className='navbar-arrow' onClick={props.hideNav}/>}
-              {showIcon && <FontAwesomeIcon icon={faBars} className='navbar-bar' onClick={props.hideNav}/>}
-            {/* <FontAwesomeIcon icon={faLessThan} size='xs' onClick={props.hideNav} className='navbar-arrow' /> */}
-            <p  > {image} {_path || "Dashboard"}</p>
+              {showIcon &&<HambergerMenu size="32"  color="#262C55"onClick={props.hideNav} className='navbar-bar'/>}
+              <img className='navbar-logo' src={logo} alt="" />
+            <p className='navbar-section' style={{color:'#262C55', fontSize:16}} > {image} &nbsp; {_path || "Dashboard"}</p>
             </div>
             <div className='navbar-right d-flex justify-content-center align-items-center  gap-2 '>
                 <img src={bell} alt="bell" />
-                <div className='d-flex align-items-center gap-2'>
+                <div className=' align-items-center gap-2 navbar-avatar'>
                     <img src={avatar} alt="avatar" />
                     <p>Bright Coker</p>
                     <img src={dropdown} alt="avatar" />

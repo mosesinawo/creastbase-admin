@@ -1,8 +1,17 @@
 .main{
     padding-left: 240px;
-    transition: all .3s;
+    transition: all .1s;
 }
 .showFull{
-    padding-left: 0;
-    transition: all .3s;
+    padding-left: 100px;
+    transition: all .1s;
+}
+@media screen and (max-width: 560px){
+    .main{
+        padding-left: 0;
+    }
+    .showFull{
+        padding-left: 0;
+        transition: all .1s;
+    }
 }
